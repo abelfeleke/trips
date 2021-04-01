@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head> 
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Montserrat:400,400i,700">
+        <link rel="stylesheet" href = "itinerary.css"> 
+        <!-- Firebase libraries -->
+        <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+        <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    </head>
+
+    <body>
+
+        <h1> Itinerary </h1>
+
+        <div class = "content">
+
+            <form id = "add-event-form">
+                <input type = "text" name = "name" placeholder = "Event name">
+                <input type = "text" name = "location" placeholder = "Event location">
+                <input type = "text" name = "details" placeholder = "Event details">
+                <button id = "button"> Add Event! </button>
+            </form>
+
+            <ul id = "event-list"></ul>
+        </div>
+
+        <!-- Firebase init -->
+        <script src = "firebaseInit.js"></script>
+        <!-- Link JS -->
+        <script src = "itinerary.js"></script>
+
+    </body>
+
+</html>

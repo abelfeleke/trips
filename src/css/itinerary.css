@@ -1,0 +1,143 @@
+:root {
+    --clr-lightblue: #4B8AC4;
+    --clr-darkblue: #142BF4;
+    --clr-grey: #faf2f6;
+    --radius: 0.5rem;
+    --padding: 1rem;
+}
+
+body {
+    background: #eab0dc;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    color: black;
+    font-size: 64px;
+    letter-spacing: 2px;
+    margin-top: 80px;
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--radius);
+    margin: 2rem auto;
+    background: white;
+    width: 20rem;
+}
+
+.content {
+    background: white;
+    max-width: 960px;
+    margin: 30px auto;
+    padding:  20px 30px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+}
+
+ul {
+    font-family: "Montserrat", sans-serif;
+    list-style-type: none; /* No bullets */
+    padding: 0;
+}
+
+li {
+    font-family: "Montserrat", sans-serif;
+    padding: 30px;
+    background: #f6f6f6;
+    font-size: 20px;
+    color: #555;
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+    height: 46px;
+    margin-bottom: 2rem;
+}
+
+/* Specify a background color */
+li:nth-child(even){
+    padding: 30px;
+    background: #f2f2f2;
+}
+
+li:nth-child(odd){
+    padding: 30px;
+    background: #f2f2f2;
+}
+
+/* Seperates spans into column form */
+li span{
+    display: block;
+}
+
+/* 2nd span text customization */
+li span:nth-child(2){
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    margin-top: 6px;
+    color: #999;
+}
+
+li span:nth-child(3){
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    margin-top: 6px;
+    color: #999;
+}
+
+li div{
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background: rgba(255,255,255,0.6);
+    width: 40px;
+    text-align: center;
+    padding: 10px 0;
+    font-weight:  bold;
+    cursor:  pointer;
+}
+
+form input{
+    font-family: "Montserrat", sans-serif;
+    float: left;
+    width: 26%;
+    margin: 0;
+    border: 0;
+    border-bottom: 3px solid #eee;
+    margin: 0 1%;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+form input:focus{
+    outline: none;
+    border-bottom: 3px solid #88236f;
+    padding-bottom: 8px;
+    transition: all ease 0.2s;
+}
+
+form:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+button{
+    border: none;
+    background: lightpink;
+    color: black; 
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    width: 16%;
+    cursor: pointer;
+    transition: 250ms all ease-in;
+    letter-spacing: 2px;
+    margin-top: 0px;
+}
+
+#button:hover {
+    background-color: lightgreen;
+}
