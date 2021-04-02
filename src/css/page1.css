@@ -1,0 +1,70 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(78, 162, 245);
+}
+
+.wrapper{
+    background: rgb(221, 229, 237);
+    width: 20rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+}
+
+.appName {
+    text-align: center;
+}
+
+.createaccount {
+    text-align: center;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.slogan {
+    text-align: center;
+}
+
+.form-label {
+    font-size:0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.form-input {
+    border:none;
+    background-color: C4C4C4;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    outline: none;
+
+}
+
+.Icons {
+    justify-content: center;
+    display: flex;
+}
+
+.otherSignIn {
+    text-align: center;
+}
+
+.submitbtn {
+    border:none;
+    background: rgb(78, 162, 245);
+    color:white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    width: 20rem;
+    cursor: pointer;
+    transition: 250ms all ease-in;
+}
+
+.submitbtn:hover {
+    background-color: rgb(7, 89, 104);
+}
