@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <link rel="stylesheet" href="../css/page1.css"/>
+    <!-- Firebase -->
+    <script src = "firebaseInit.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
 </head>
 <body>
 
@@ -44,33 +49,5 @@
     <img class="city" src="../images/location_city.svg" alt="">
 </div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/8.3.1/firebase-firestore.js"></script>
-<script src="/__/firebase/8.3.1/firebase-auth.js"></script>
-
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  // Do not upload this!
-  var firebaseConfig = {
-    apiKey: "AIzaSyCLRpq4IwMdIG79SwXyUIdFaltsMME9jMw",
-    authDomain: "spring21-sps-46.firebaseapp.com",
-    projectId: "spring21-sps-46",
-    storageBucket: "spring21-sps-46.appspot.com",
-    messagingSenderId: "603728712988",
-    appId: "1:603728712988:web:e962e91e985e517e6dd6d9",
-    measurementId: "G-5C4G707BZM"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  // Create a reference to our database(firestore) on firebase & Authentication service
-  const database = firebase.firestore();
-  const auth = firebase.auth();
-</script> 
 </body>
 </html>
