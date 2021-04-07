@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="createTrip.css">
+    <title>Create a Trip</title>
+
+    <script src = "createTrip.js"></script>
+     <!-- Firebase -->
+    <script src = "firebaseInit.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  </head>
+  <body>
+    <h1>Create a Trip</h1>
+    <div class="formCenter">
+    <form id="create-trip">
+        <h3>Trip Name</h3>
+            <input type="text" name="name" placeholder="">
+        <h3>Trip Dates</h3>
+            From: <input type="date" name="date_from">
+            To: <input type="date" name="date_to">
+        <h3>Trip Location</h3>
+            <input type="text" name="location" placeholder="">
+        <h3>Trip Description</h3>
+            <input type="text" name="description" placeholder="">
+        <p></p>
+            <button>Create Trip</button>
+    </form>
+  </div>
+  </body>
+</html>
