@@ -1,4 +1,5 @@
 // setup materialize components
+// This allows the modals and collapsible class to function
 document.addEventListener('DOMContentLoaded', function() {
 
     var modals = document.querySelectorAll('.modal');
