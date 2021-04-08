@@ -10,8 +10,8 @@ signUp.addEventListener('submit', (e) => {
         // Here we get the modal that is opened up, in this case, the SignUp Modal
         // We then get that reference to that modal and using M (materialize library) we close it
         // Finally, we will reset the signup form so that the form clears up once a user signs up!
-         debugger;
          const modal = document.querySelector('#modal-signup');
+         M.Modal.getInstance(modal).close();
          signUp.reset();
     });
 });
