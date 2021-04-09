@@ -63,6 +63,7 @@ body {
     width: 20rem;
     cursor: pointer;
     transition: 250ms all ease-in;
+    justify-content: center;
 }
 
 .submitbtn:hover {
