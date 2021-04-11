@@ -18,15 +18,16 @@ form.addEventListener('submit', (e) => {
         // append event id to trip.events
         trip.update({
             events: firebase.firestore.FieldValue.arrayUnion(event.id) 
-        });
+        }).then(() => {
+            form.reset();
+            location.reload();
+        })
     });
-    // clear form
-    form.reset() 
 });
 
 var eventsCollection = db.collection("events"); // events collection
 
-// real-time listener 
+// Displays events 
 trip.get().then((snapshot) => {
     let eventIds = snapshot.data().events; 
     // for each id 
@@ -68,6 +69,8 @@ function renderEvent(doc){
         // delete id from trip.events
         trip.update({
             events: firebase.firestore.FieldValue.arrayRemove(eventId) 
-        });
+        }).then(() => {
+            window.location.reload(); // refresh
+        })
     });
 }
