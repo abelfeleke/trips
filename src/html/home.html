@@ -1,23 +1,10 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../javascript/auth.js"></script>
-    <script src="../javascript/home.js"></script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src = "../javascript/firebaseInit.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src = "https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="../css/home.css">
 
   <title>Trips</title>
 
@@ -25,30 +12,55 @@
 
 <!-- NAVBAR -->
 <body class="blue lighten-1">
-    <nav class="z-depth-0 grey lighten-4">
-        <div class="nav-wrapper container">
-          <a href="#" class="brand-logo">
-            <img src="../images/Attempt3.svg" style="width: 180px; margin-top: 10px;">
-          </a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li class="logged-in">
-                <a href="#" class="grey-text" id="logout">Join A Trip</a>
-              </li>
-              <li class="logged-in">
-                <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create A Trip</a>
-              <li class="logged-in">
-                <a href="#" class="grey-text modal-trigger" data-target="modal-account">Profile</a>
-              </li>
-            </span>
-          </ul>
-        </div>
-      </nav>
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="../images/Attempt3.svg" style="width: 180px; margin-top: 10px;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="logged-in">
+          <a href="#" class="grey-text" id="logout">Join A Trip</a>
+        </li>
+        <li class="logged-in">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create A Trip</a>
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Profile</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
 
   <!-- ACCOUNT MODAL -->
-    <div id="modal-account" class="modal">
-      <div class="modal-content center-align">
-        <h4>My Profile</h4><br />
-        <div class="account-details"></div>
-      </div>
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>My Profile</h4><br />
+      <div class="account-details"></div>
     </div>
+  </div>
+
+  <h1 id='trip-h1'> Trips </h1>
+  <form id="join-trip">
+    <p id='join-code'>Enter Trip Code to Join</p>
+    <input id='type-code' type="text" name="code" placeholder="Trip Code">
+    <button>Join Trip</button>
+  </form>
+  <div class = "content">
+    <ul id = "trip-list"></ul>
+  </div>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- Firebase -->
+  <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+  <script src = "https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src = "../javascript/firebaseInit.js"></script>
+  <script src = "../javascript/home.js"></script>
+
+</body>
+
+
 </html>
