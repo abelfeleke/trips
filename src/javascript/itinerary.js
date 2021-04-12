@@ -9,6 +9,12 @@ var trip = db.collection("trips").doc(tripId);
 // listens for new event and saves data
 form.addEventListener('submit', (e) => { 
     e.preventDefault();
+    // valid input check
+    if (form.name.value == "" || form.location.value == "" || form.details.value == "") {
+        window.alert("Error: Must input event name, location and details.");
+        form.reset();
+        return;
+    }
     // add event to firestore 
     db.collection('events').add({ 
         name: form.name.value,
