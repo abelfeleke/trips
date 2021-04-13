@@ -5,27 +5,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome</title>
         <link rel="stylesheet" href="../css/page1.css"/>
-        <script src = "firebaseInit.js"></script>
     </head>
     <body>
 
         <div class="wrapper">
             <h1 class='appName'>Trips</h1>
             <h2 class="createaccount">Login</h2>
-
-            <div class="form-group">
-                <label class="form-label" for ="email">Email</label>
-                <input class="form-input" type = "text" id='email' placeholder="Enter your email">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label" for ="pw">Password</label>
-                <input class="form-input" type = "text" id='pw' placeholder="Enter your password">
-            </div>
-
-            <button class='submitbtn'>Submit</button>
+            <form id = "login-form">
+                <div class="form-group">
+                    <label class="form-label" for ="email">Email</label>
+                    <input class="form-input" type = "text" id='login-email' placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for ="pw">Password</label>
+                    <input class="form-input" type = "text" id='login-password' placeholder="Enter your password">
+                </div>
+                <button class='submitbtn' type = "submit">Login</button>
+            </form>
             <h3 class='otherSignIn'>Don't have an account? </h3>
-            <a href="page1.html" class="submitbtn" style="text-decoration: none;">Create an account</a>
+            <div class = 'submitbtn'>
+                <a href="page1.html" class = 'submitbtn' style="text-decoration:none;" >Create an account</a>
+            </div>
+            
         </div>
 
         <div class="slogan">
@@ -33,5 +34,16 @@
             <img class="restaurant" src="../images/restaurant.svg" alt="">
             <img class="city" src="../images/location_city.svg" alt="">
         </div>
+
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+          <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+          <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+          <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+          <script src = "../javascript/firebaseInit.js"></script>
+          <script src = "../javascript/auth.js"></script>
+
     </body>
 </html>
