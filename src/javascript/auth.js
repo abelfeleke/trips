@@ -15,7 +15,10 @@ if (signUp != null) {
             // Finally, we will reset the signup form so that the form clears up once a user signs up!
                 window.location.href = '/src/html/home.html';
                 signUp.reset();
-            });
+                signUp.querySelector('.error').innerHTML = '';
+            }).catch(err => {
+                signUp.querySelector('.error').innerHTML = err.message;
+            })
     });
 }
 
@@ -33,7 +36,10 @@ if (loginForm != null) {
             console.log(cred.user);
             //reset form
             loginForm.reset();
-        }).catch((incorrectpass) => {console.log(incorrectpass)});
+            loginForm.querySelector('.error').innerHTML = '';
+        }).catch(err => {
+            loginForm.querySelector('.error').innerHTML = err.message;
+        });
     });
 }
 
