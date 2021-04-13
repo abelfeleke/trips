@@ -66,6 +66,15 @@ body {
     justify-content: center;
 }
 
+.linkBtn {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    font-size: calc(100px / 7.5);
+    text-align: center;
+    width: 18rem;
+  }
+
 .submitbtn:hover {
     background-color: rgb(7, 89, 104);
 }

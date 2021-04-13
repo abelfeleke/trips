@@ -8,9 +8,14 @@ if (signUp != null) {
             const pw = signUp['signup-password'].value;
             //Sign up a user
             auth.createUserWithEmailAndPassword(email, pw).then(cred => {
+                debugger;
+                db.collection("users").doc(cred.uid).set({
+                    trips: []
+                    });
             // Finally, we will reset the signup form so that the form clears up once a user signs up!
-            signUp.reset();
-        });
+                window.location.href = '/src/html/home.html';
+                signUp.reset();
+            });
     });
 }
 
@@ -18,17 +23,17 @@ if (signUp != null) {
 const loginForm = document.querySelector('#login-form');
 if (loginForm != null) {
     loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // get user info
-            const email = loginForm['login-email'].value;
-            const password = loginForm['login-password'].value;
-            // log the user in
-            auth.signInWithEmailAndPassword(email, password).then((cred) => {
+        e.preventDefault();
+        // get user info
+        const email = loginForm['login-email'].value;
+        const password = loginForm['login-password'].value;
+        // log the user in
+        auth.signInWithEmailAndPassword(email, password).then((cred) => {
             window.location.href = '/src/html/home.html';
             console.log(cred.user);
             //reset form
             loginForm.reset();
-    }).catch((incorrectpass) => {console.log(incorrectpass)});
+        }).catch((incorrectpass) => {console.log(incorrectpass)});
     });
 }
 
