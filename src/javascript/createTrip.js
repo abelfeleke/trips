@@ -1,7 +1,6 @@
 const form = document.querySelector('#create-trip');
 
 // get user id
-var userid = firebase.auth().currentUser;
 var docid;
 
 // wait for the sumbit button to be clicked and add the entries and doc id
@@ -26,6 +25,7 @@ form.addEventListener('submit', (e) => {
       code: docRef.id
     });
     // add trip to user's list
+    let userid = firebase.auth().currentUser.uid;
     var user = db.collection('users').doc(userid);
     user.update({
       trips: firebase.firestore.FieldValue.arrayUnion(docRef.id)

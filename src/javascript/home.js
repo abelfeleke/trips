@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 const trips = document.querySelector('#trip-list');
 const form = document.querySelector('#join-trip');
 
-const user = firebase.auth().currentUser;
-
 // create element & render event
 function renderTrip(doc){
   let li = document.createElement('li');
@@ -46,8 +44,9 @@ function renderTrip(doc){
   // deleting data
   del.addEventListener('click', (e) => {
     let id = e.target.parentElement.getAttribute('data-id');
-    var tripsList = db.collection("users").doc(user);
-    tripsList.update({
+    var user = firebase.auth().currentUser.uid;
+    var userdoc = db.collection('users').doc(user);
+    userdoc.update({
       trips: firebase.firestore.FieldValue.arrayRemove(id)
     });
     let left = trips.querySelector('[data-id=' + id + ']');
@@ -67,6 +66,8 @@ function renderTrip(doc){
 // real-time listener
 db.collection('trips1').orderBy('date_from').onSnapshot(snapshot => {
   let changes = snapshot.docChanges();
+  var user = firebase.auth().currentUser.uid;
+  var userdoc = db.collection('users').doc(user);
   user.get().then((doc) => {
     let list = doc.data().trips;
     changes.forEach(change => {
@@ -82,6 +83,8 @@ db.collection('trips1').orderBy('date_from').onSnapshot(snapshot => {
 // join trips
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  var user = firebase.auth().currentUser.uid;
+  var userdoc = db.collection('users').doc(user);
   user.get().then((doc) => {
     // check to see if already in trip
     let list = doc.data().trips;

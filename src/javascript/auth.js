@@ -8,13 +8,12 @@ if (signUp != null) {
             const pw = signUp['signup-password'].value;
             //Sign up a user
             auth.createUserWithEmailAndPassword(email, pw).then(cred => {
-                console.log('User Signed Up');
-                debugger;
-                db.collection("users").doc(cred.uid).set({
+                db.collection("users").doc(cred.user.uid).set({
                     trips: []
-                    });
+                    }).then ((value) => {
+                        window.location.href = '../html/home.html';
+                    })
             // Finally, we will reset the signup form so that the form clears up once a user signs up!
-                window.location.href = '/src/html/home.html';
                 signUp.reset();
                 signUp.querySelector('.error').innerHTML = '';
             }).catch(err => {
