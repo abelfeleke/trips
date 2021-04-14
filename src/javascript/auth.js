@@ -8,6 +8,7 @@ if (signUp != null) {
             const pw = signUp['signup-password'].value;
             //Sign up a user
             auth.createUserWithEmailAndPassword(email, pw).then(cred => {
+                console.log('User Signed Up');
                 debugger;
                 db.collection("users").doc(cred.uid).set({
                     trips: []
@@ -44,11 +45,15 @@ if (loginForm != null) {
 }
 
 //Logout
-const logout = document.querySelector('#logout');
+const logout = document.getElementById('logout');
+console.log(logout);
 if (logout != null) {
+    console.log('not yet')
     logout.addEventListener('click', (e) => {
+        console.log('clicked')
         e.preventDefault();
         auth.signOut().then(() => {
+        window.location.href = "login.html";
         console.log('user signed out');
     });
     });
