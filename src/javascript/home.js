@@ -64,11 +64,11 @@ function renderTrip(doc){
 }
 
 // real-time listener
-db.collection('trips1').orderBy('date_from').onSnapshot(snapshot => {
+db.collection('trips').orderBy('date_from').onSnapshot(snapshot => {
   let changes = snapshot.docChanges();
   var user = firebase.auth().currentUser.uid;
   var userdoc = db.collection('users').doc(user);
-  user.get().then((doc) => {
+  userdoc.get().then((doc) => {
     let list = doc.data().trips;
     changes.forEach(change => {
       if(list.includes(change.doc.data().code)){
@@ -85,7 +85,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   var user = firebase.auth().currentUser.uid;
   var userdoc = db.collection('users').doc(user);
-  user.get().then((doc) => {
+  userdoc.get().then((doc) => {
     // check to see if already in trip
     let list = doc.data().trips;
     if (list.includes(form.code.value)) {
@@ -96,13 +96,13 @@ form.addEventListener('submit', (e) => {
       return;
     }
     // join trip
-    user.update({
+    userdoc.update({
       trips: firebase.firestore.FieldValue.arrayUnion(form.code.value)
     })
     // refresh page
     .then((value) => {
       form.reset();
-      var myWindow = window.open("itinerary.html", "_self");
+      var myWindow = window.open("home.html", "_self");
     })
   })
 });
