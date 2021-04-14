@@ -32,7 +32,7 @@ if (loginForm != null) {
         const password = loginForm['login-password'].value;
         // log the user in
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
-            window.location.href = '/src/html/home.html';
+            window.location.href = '../html/home.html';
             console.log(cred.user);
             //reset form
             loginForm.reset();
@@ -52,7 +52,8 @@ if (logout != null) {
         console.log('clicked')
         e.preventDefault();
         auth.signOut().then(() => {
-        window.location.href = "login.html";
+        window.location.href = "../html/login.html";
+
         console.log('user signed out');
     });
     });
