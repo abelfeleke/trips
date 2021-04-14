@@ -43,6 +43,7 @@ if (loginForm != null) {
     });
 }
 
+//Logout
 const logout = document.getElementById('logout');
 console.log(logout);
 if (logout != null) {
@@ -52,6 +53,7 @@ if (logout != null) {
         e.preventDefault();
         auth.signOut().then(() => {
         window.location.href = "../html/login.html";
+
         console.log('user signed out');
     });
     });
